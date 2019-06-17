@@ -55,52 +55,106 @@ body
     z-index: 1;
     color: white;
   }
-  /* colorpicker styles */
-.colorpicker {
-    background-color: #222222;
-    border-radius: 5px 5px 5px 5px;
-    box-shadow: 2px 2px 2px #444444;
-    color: #FFFFFF;
-    font-size: 12px;
-    position: absolute;
-    width: 460px;
+
+/*style the search! button*/
+.btn {
+  color: black;
+  padding: 12px 16px;
+  vertical-align: middle;
+  margin-left: 637px;
+  background-color: #2b303b;
+  cursor: pointer;
+  color: gray;
+  border: none;
 }
-#picker {
-    cursor: crosshair;
-    float: left;
-    margin: 10px;
-    border: 0;
+.btn:hover {
+  background-color: black;
 }
-.controls {
-    float: right;
-    margin: 10px;
+
+.trending {
+  color: white;
+  font-size: 70px;
+  margin-left: 450px;
+  border-block-color: #2b303b;
+  
 }
-.controls > div {
-    border: 1px solid #2F2F2F;
-    margin-bottom: 5px;
-    overflow: hidden;
-    padding: 5px;
+  
+
+/* Style the navbar */
+.topnav {
+  overflow: hidden;
+  background-color:#2b303b;
 }
-.controls label {
-    float: left;
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: darkolivegreen;
+  font-size: 17px;
 }
-.controls > div input {
-    background-color: #121212;
-    border: 1px solid #2F2F2F;
-    color: #DDDDDD;
-    float: right;
-    font-size: 10px;
-    height: 14px;
-    margin-left: 6px;
-    text-align: center;
-    text-transform: uppercase;
-    width: 75px;
+
+/* Navbar links on mouse-over */
+.topnav a:hover {
+  background-color: #2b303b;
+  color: black;
 }
-.preview {
-    background: url("../images/select.png") repeat scroll center center transparent;
-    border-radius: 3px;
-    box-shadow: 2px 2px 2px #444444;
-    cursor: pointer;
-    height: 30px;
-    width: 30px;
+
+/* Active/current link */
+.topnav a.active {
+  background-color: #2b303b;
+  color: white;
+}
+
+/* Style the input container */
+.topnav .login-container {
+  float: right;
+}
+
+/* Style the input field inside the navbar */
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  font-family: 'Times New Roman', Times, serif;
+  border: none;
+  width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+}
+
+/* Style the button inside the input container */
+.topnav .login-container button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: black;
+  color: white;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .login-container button:hover {
+  background: #2b303b;
+}
+
+/* Add responsiveness - On small screens, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .topnav .login-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .login-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc; 
+  }
 }
