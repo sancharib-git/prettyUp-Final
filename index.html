@@ -15,19 +15,36 @@
     
         <p> Insert "visual room" here</p>
 
-    <!Theme search bar>
+    <!--Theme search bar-->
+        <div class="box">
+                <div class="container-1">
+                    <span class="icon"><i class="fa fa-search"></i></span>
+                    <input type="search" id="search" placeholder="Theme..." />
+                </div>
+              </div>
+        <div class="box">
+                <div class="container-1">
+                    <span class="icon"><i class="fa fa-search"></i></span>
+                        <input type="search" id="search" placeholder="Looking For?" />
+                    </div>
+                  </div>
     
-    <div class="topnav">
-            <a class="active">Theme</a>
-            <input type="text" placeholder="Search..">
-        </div>
 
-        <p></p>
-    
-    <div class="topnav">
-                <a class="active">Looking For?</a>
-                <input type="text" placeholder="Search..">
-        </div>
+                  <!-- preview element -->
+<div class="preview"></div>
+
+<!-- colorpicker element -->
+<div class="colorpicker" style="display:none">
+    <canvas id="picker" var="1" width="300" height="300"></canvas>
+
+    <div class="controls">
+        <div><label>R</label> <input type="text" id="rVal" /></div>
+        <div><label>G</label> <input type="text" id="gVal" /></div>
+        <div><label>B</label> <input type="text" id="bVal" /></div>
+        <div><label>RGB</label> <input type="text" id="rgbVal" /></div>
+        <div><label>HEX</label> <input type="text" id="hexVal" /></div>
+    </div>
+</div>
 
     
     
