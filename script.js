@@ -94,3 +94,4 @@ $('#picker').mousemove(function(e) { // mouse move handler
 $('#picker').click(function(e) { // click event handler
     bCanPreview = !bCanPreview;
 });
+
