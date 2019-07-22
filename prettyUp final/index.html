@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+
+  <title>PrettyUp!</title>
+
+    <script async src="https://cse.google.com/cse.js?cx=016032306067518336075:cvrv1c-fc88"></script>
+	<link rel="stylesheet" href="demo.css" type="text/css" media="screen" />
+	<script type='text/javascript' src='jquery-1.9.1.js'></script>
+	<script type='text/javascript' src='tinycolor.js'></script>
+	<script type='text/javascript'>
+
+		function colorChange(color) {
+			var tiny = tinycolor(color);
+	
+			var allColors = [];
+			for (var i in tinycolor.names) {
+				allColors.push(i);
+			}
+			var mostReadable = tinycolor.mostReadable(color, allColors);
+
+			$("#mostReadable").css("background-color",
+			     mostReadable.toHexString()
+			 );
+
+			 var combines = $("#combine-output").toggleClass("invisible", !tiny.isValid());
+
+			 function colorArrayToHTML(arr) {
+			 	return $.map(arr, function(e) {
+			     return '<span style="background:'+e.toHexString()+'"></span>'
+			 	 }).join('');
+			 }
+
+			 var triad = tiny.triad();
+			 combines.find(".triad").html(colorArrayToHTML(triad));
+			 console.log(triad.map(function(f) {return f.toHexString();}));
+
+			 var tetrad = tiny.tetrad();
+			 combines.find(".tetrad").html(colorArrayToHTML(tetrad));
+
+			 var mono = tiny.monochromatic();
+			 combines.find(".mono").html(colorArrayToHTML(mono));
+
+			 var analogous = tiny.analogous();
+			 combines.find(".analogous").html(colorArrayToHTML(analogous));
+
+			 var splitcomplement = tiny.splitcomplement();
+			 combines.find(".sc").html(colorArrayToHTML(splitcomplement));
+		}
+
+		$(function() {
+			$("#color").bind("keyup change", function() {
+				colorChange($(this).val());
+			});
+			colorChange({r: 150, g: 0, b: 100});
+
+			$("#inputter a").click(function() {
+			     $("#color").val($(this).text()).trigger("change");
+                return false;
+			});
+		});
+
+	</script>
+	
+</head>
+
+
+<body style="background-color: lightgray;">
+    <!--Neon sign for header-->
+        <h1> 
+            <iframe src="https://ntmaker.gfto.ru/newneontexten/?image_height=300&image_width=1350&image_font_shadow_width=30&image_font_size=100&image_background_color=1F1F1F&image_text_color=D819FF&image_font_shadow_color=F723E9&image_url=&image_text=PrettyUp!&image_font_family=Nickainley&" frameborder='no' scrolling='no' width="1350" height="300"></iframe>
+		</h1>
+		
+		<!--color picker-->
+
+		<script src="jscolor.js"></script>
+		<p>Choose room color here!:
+			<input value="ffcc00" class="jscolor {width:243, height:150, position:'right',
+				borderColor:'#FFF', insetColor:'#FFF', backgroundColor:'#666'}">
+
+		<p>
+            Enter a color: <input type="text" placeholder="The color of your room" id='color' />
+        </p>
+	   <p>Here are some colours that will go well with your current color scheme:</p>
+	</div>
+	<pre id='code-output'></pre>
+	
+	<div id='combine-output'>
+	   <table>
+	       <tr>
+	           <th>Triad</th> <td><div class='triad'></div></td>
+	       </tr>
+	       <tr>
+	           <th>Tetrad</th> <td><div class='tetrad'></div></td>
+	       </tr>
+	       <tr>
+	           <th>Monochromatic</th> <td><div class='mono'></div></td>
+	       </tr>
+	       <tr>
+	           <th>Analogous</th> <td><div class='analogous'></div></td>
+	       </tr>
+	       <tr>
+	           <th>Split Complements</th> <td><div class='sc'></div></td>
+	       </tr>
+	   </table>
+    </div>
+    
+<!--"Looking for" search bar-->
+        <div class="box">
+                <div class="container-1">
+                    <span class="icon"><i class="fa fa-search"></i></span>
+                        <form action= "index.html"><input type="search" name="q" id="s01" placeholder="Search! Theme + Color + Item" style="width: 100%; background-color: darkslategray; height: 50px; color: rgb(255, 255, 255); font-size: 30px; font-family: 'Times New Roman', Times, serif;"/></form>
+                    </div>
+                    <div class="gcse-searchresults-only"></div>
+                  </div>
+	
+
+
+
+	
+
+  
+</body>
+</html>
